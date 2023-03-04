@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notizblock</title>
+    <link rel="shortcut icon" type="image/x-icon" href="img/Notes.jpg"> <link>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="script.js"></script>
+</head>
+
+<body onload="render()">
+    <nav class="header">
+        <img class="header-img" src="img/Notes.jpg" alt="Notizblock">
+        <a href="#" class="toggle-btn" onclick="active()">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
+        <div class="navigator" id="show">
+            <ul>
+                <li><a href="#">Startseite</a></li>
+                <li><a href="#">Profil</a></li>
+                <li><a href="#">Impressum</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="input-section">
+        <div class="inputField">
+            <form class="inputField-child">
+                <input id="title" name="title" class="input-title" type="text" placeholder="Titel schreiben...">
+                <textarea id="note" name="note" onmouseup="showTitleButton()" class="text-field" type="text" placeholder="Notiz schreiben..."></textarea>
+                <span class="text-center" id="error"></span>
+                <button id="button" class="dnone-button-input" type="button" onclick="addnote()">Notiz-Speichern</button>
+            </form>  
+        </div> 
+    </div>
+
+    <div class="button-section">
+        <div>
+            <button id="button-notes" onclick="showNotes()">Notizen</button>
+            <button id="button-delete" class="button-colour" onclick="showDelete()">Papierkorb</button>
+        </div>
+    </div>
+
+    <div id="noteContent" class="note-section">   
+    </div>
+    <div id="deleteContent" class="delete-section">
+    </div>
+
+    <div class="footer">
+    </div>
+
+</body>
+
+</html>

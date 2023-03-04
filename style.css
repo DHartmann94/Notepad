@@ -1,0 +1,258 @@
+body {
+    margin: 0px;
+    font-family: 'Kaisei Decol', serif;
+}
+
+button {
+    margin-top: 10px;
+    background-color: #e8c115;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    padding: 10px;
+    transition: all 225ms ease-in-out;
+    text-align: center;
+}
+
+button:hover {
+    background-color: #a67f0a;
+    cursor: pointer;
+    transition: all 225ms ease-in-out;
+}
+
+.active {
+    display: flex !important;
+}
+
+/* Header */
+.header {
+    min-height: 150px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.144);
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 100px 0px 100px;
+}
+
+.header-img {
+    display: flex;
+    width: 150px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.navigator {
+    display: flex;
+}
+
+.navigator ul {
+    display: flex;
+}
+
+.navigator ul li {
+    list-style: none;
+    height: 100%;
+}
+
+.navigator ul li a {
+    text-decoration: none;
+    color: black;
+    margin-right: 15px;
+    border-bottom: 2px solid transparent;
+    transition: all 225ms ease-in-out;
+}
+
+.navigator ul li a:hover {
+    color: #a67f0a;
+    border-bottom: 2px solid #a67f0a;
+    transition: all 225ms ease-in-out;
+}
+
+.toggle-btn {
+    position: absolute;
+    top: 65px;
+    right: 30px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+}
+
+.bar {
+    height: 4px;
+    width: 100%;
+    background-color: black;
+    border-radius: 100px;
+}
+
+.dnone {
+    display: none;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Note-Input */
+.input-section {
+    padding: 25px 0px 75px 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.inputField {
+    border: 1px solid lightgray;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.144);
+    background-color: #f0e9e9;
+    border-radius: 10px;
+}
+
+.inputField-child {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-title {
+    background-color: #f0e9e9;
+    border: none;
+    display: none;
+    height: 25px;
+}
+
+.input-title:hover {
+    background-color: #dad4d4;
+}
+
+.text-field {
+    margin-top: 5px;
+    width: 500px;
+    height: 100px;
+    background-color: #f0e9e9;
+    border: none;
+}
+
+.text-field:hover {
+    background-color: #dad4d4;
+}
+
+.dnone-button-input {
+    display: none;
+}
+
+/* Button-Section */
+.button-section{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+.button-colour {
+    background-color: white !important;
+}
+
+/* Notes */
+.note-section {
+    padding-left: 100px;
+    padding-right: 100px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.delete-section {
+    padding-left: 100px;
+    padding-right: 100px;
+    display: none;
+    flex-wrap: wrap;
+}
+
+.note-box {
+    border: 1px solid lightgray;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.144);
+    padding: 8px 32px 8px 8px;
+    margin: 8px;
+    transition: all 225ms ease-in-out;
+}
+
+.note-box:hover {
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.144);
+    transition: all 225ms ease-in-out;
+}
+
+.delete-img {
+    width: 20px;
+    height: 20px;
+    margin-top: 16px;
+    object-fit: contain;
+}
+
+.dnoneND {
+    display: none;
+}
+
+/* Footer */
+.footer {
+    display: flex;
+    position: absolute;
+    top: 100%;
+    background-color: #343442;
+    color: white;
+    width: 100%;
+    height: 100px;
+}
+
+@media (max-width: 850px) {
+
+    /* Header */
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 0px 20px 0px 20px;
+    }
+
+    .header-img {
+        margin-top: 4px;
+    }
+
+    .navigator {
+        display: none;
+        text-align: center;
+        width: 100%;
+    }
+
+    .toggle-btn {
+        display: flex;
+    }
+
+    .navigator ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .active {
+        display: flex;
+    }
+
+    .dnone {
+        display: block;
+    }
+
+    /* Note-Input */
+    .input-section {
+        padding-bottom: 25px;
+    }
+    .text-field {
+        width: 250px;
+        height: 75px;
+    }
+
+    /* Notes */
+    .note-section {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .delete-section {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
