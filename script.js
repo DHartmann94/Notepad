@@ -2,7 +2,7 @@ let titles = [];
 let notes = [];
 let titlesDelete = [];
 let notesDelete = [];
-load();
+load(); // load local Storage
 
 
 function render(){
@@ -13,17 +13,10 @@ function render(){
     document.getElementById("title").classList.remove(`active`);
     document.getElementById("button").classList.remove(`active`);
     
-
     for (let i=0; i<titles.length; i++){
         let title = titles[i];
         let note = notes[i];
-        document.getElementById('noteContent').innerHTML += /*html*/`
-        <div class="note-box">
-        <div><b>${title}</b></div>
-        <div>${note}</div>
-        <a href="#" onclick="deleteNote(${i})"><img class="delete-img" src="img/delete.jpg" alt="trash"></a>
-        </div>
-        `;
+        document.getElementById('noteContent').innerHTML += renderTemplate(title, note, i);
     }
 }
 
@@ -32,14 +25,7 @@ function renderDelete() {
     for (let i=0; i<titlesDelete.length; i++){
         let titleDelete = titlesDelete[i];
         let noteDelete = notesDelete[i];
-        document.getElementById('deleteContent').innerHTML += /*html*/`
-        <div class="note-box">
-        <div><b>${titleDelete}</b></div>
-        <div>${noteDelete}</div>
-        <div><a href="#" onclick="deleteDelete(${i})"><img class="delete-img" src="img/delete.jpg" alt="trash"></a>
-        <a href="#" onclick="restore(${i})"><img class="delete-img" src="img/restore-window-32.jpg" alt="restore"></a></div>
-        </div>
-        `;
+        document.getElementById('deleteContent').innerHTML += deleteTemplate(titleDelete, noteDelete, i);
     }
 }
 
@@ -146,4 +132,26 @@ function showDelete() {
     document.getElementById("deleteContent").classList.add(`active`);
     document.getElementById("button-delete").classList.remove(`button-colour`);
     document.getElementById("button-notes").classList.add(`button-colour`);
+}
+
+/* --- Templates --- */
+function renderTemplate(title, note, i) {
+    return /*html*/`
+    <div class="note-box">
+    <div><b>${title}</b></div>
+    <div>${note}</div>
+    <a href="#" onclick="deleteNote(${i})"><img class="delete-img" src="img/delete.jpg" alt="trash"></a>
+    </div>
+    `;
+}
+
+function deleteTemplate(titleDelete, noteDelete, i) {
+    return /*html*/`
+    <div class="note-box">
+        <div><b>${titleDelete}</b></div>
+        <div>${noteDelete}</div>
+        <div><a href="#" onclick="deleteDelete(${i})"><img class="delete-img" src="img/delete.jpg" alt="trash"></a>
+        <a href="#" onclick="restore(${i})"><img class="delete-img" src="img/restore-window-32.jpg" alt="restore"></a></div>
+        </div>
+    `;
 }
