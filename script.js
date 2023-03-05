@@ -6,18 +6,21 @@ load(); // load local Storage
 
 
 function render(){
+    resetFieldsAndButtons();
+    for (let i=0; i<titles.length; i++){
+        let title = titles[i];
+        let note = notes[i];
+        document.getElementById('noteContent').innerHTML += renderTemplate(title, note, i);
+    }
+}
+
+function resetFieldsAndButtons() {
     document.getElementById('title').value = '';
     document.getElementById('note').value = '';
     document.getElementById('error').innerHTML = '';
     document.getElementById('noteContent').innerHTML = '';
     document.getElementById("title").classList.remove(`active`);
     document.getElementById("button").classList.remove(`active`);
-    
-    for (let i=0; i<titles.length; i++){
-        let title = titles[i];
-        let note = notes[i];
-        document.getElementById('noteContent').innerHTML += renderTemplate(title, note, i);
-    }
 }
 
 function renderDelete() {
